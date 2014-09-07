@@ -12,6 +12,8 @@ class UserGateway {
 	}
 
 	public function createUser($input) {
+		// TODO : How to do validation ??
+		return $this->userRepository->create($input);
 	}
 
 }
