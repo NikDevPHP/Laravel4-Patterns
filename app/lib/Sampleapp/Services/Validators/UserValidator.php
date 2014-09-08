@@ -1,4 +1,4 @@
-<?php namespace Sampleapp\ServiceProviders\Validators;
+<?php namespace Sampleapp\Services\Validators;
 
 class UserValidator extends Validator {
 

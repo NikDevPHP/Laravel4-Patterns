@@ -14,6 +14,6 @@ class EloquentUserRepository extends BaseRepository implements UserRepository {
 
         public function create(array $data)
         {
-                $this->user->create($data);
+                return $this->user->create($data);
         }
 }

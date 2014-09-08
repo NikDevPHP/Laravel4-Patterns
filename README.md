@@ -1,16 +1,54 @@
 ## Laravel - Patterns demo application
 
-## Includes the following patterns
+Basic template for laravel 4 applications using Gateways, Repositories, Service Providers and Validaion Service.
 
-* Service Provider
-* Repositories
+
+### Includes the following patterns
+
 * Gateways
+* Repositories
+* Service Providers
 * Validation Service
 
 Inspired by :
 https://github.com/seeARMS/laravel-repository-gateway
 
-## License
+
+### How everthing fits together
+
+                              Service Provider
+                                     |
+                    (validation)     |
+                      (service)      V 
+    Controller ------> Gateway -----------> Repository 1 ---> Model 1
+                          |
+                          ----------------> Repository 2 ---> Model 2
+                          |
+                          ----------------> Repository n ---> Model n
+
+
+### How to use it
+
+#### Step 1
+
+Edit the composer.json file inside the laravel 4 root directory and
+add the following line to "classmap" section :
+
+	"autoload": {
+		"classmap": [
+			......
+			"app/lib"
+		],
+	},
+
+#### Step 2
+
+From the console run
+
+	$composer dump-autoload -o
+
+
+### License
 
 The MIT License (MIT)
 
