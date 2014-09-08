@@ -13,13 +13,17 @@ Basic template for laravel 4 applications using Gateways, Repositories, Service 
 Inspired by :
 https://github.com/seeARMS/laravel-repository-gateway
 
+Reference :
+http://stackoverflow.com/questions/18817615/managing-relationships-in-laravel-adhering-to-the-repository-pattern
+http://stackoverflow.com/questions/18817615/managing-relationships-in-laravel-adhering-to-the-repository-pattern
+http://culttt.com/2013/07/29/creating-laravel-4-validation-services/
 
 ### How everthing fits together
 
                               Service Provider
                                      |
                     (validation)     |
-                      (service)      V 
+                      (service)      V
     Controller ------> Gateway -----------> Repository 1 ---> Model 1
                           |
                           ----------------> Repository 2 ---> Model 2
