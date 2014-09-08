@@ -5,9 +5,7 @@
  * To create a user the final URL will be : 'api/user/create'
  *
  * Since I am using the Laravel Route::controller the method will be
- * called 'getCreate' in the file 'app/controllers/UserController.php'.
- * I am using the GET request to create a user for this demo. You should
- * always use a POST request in your application to create user.
+ * called 'postCreate' in the file 'app/controllers/UserController.php'.
  */
 
 Route::group(array('prefix' => 'api'), function()

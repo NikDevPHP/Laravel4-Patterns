@@ -19,14 +19,9 @@ class UserController extends BaseController {
 	/**
 	  * Create a new resource in storage.
 	  *
-	  * NOTE : This is a create new user request hence it should
-	  * ALWAYS be a POST request. Just for demo I am using a GET
-	  * request. You will have to rename it postCreate() in your
-	  * application.
-	  *
 	  * @return Response
 	  */
-	public function getCreate()
+	public function postCreate()
 	{
 		$data = $this->userGateway->createUser(Input::all());
 
