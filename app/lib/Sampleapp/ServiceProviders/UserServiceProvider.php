@@ -10,8 +10,8 @@ class UserServiceProvider extends ServiceProvider {
 		// Bind the user repository interface to our Eloquent-specific implementation
 		// This service provider is called every time the application starts
 		$this->app->bind(
-			'Sampleapp\Repositories\UserRepository',
-			'Sampleapp\Repositories\EloquentUserRepository'
+			'Sampleapp\Repositories\User\UserRepository',
+			'Sampleapp\Repositories\User\EloquentUserRepository'
 		);
 	}
 

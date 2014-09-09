@@ -1,6 +1,7 @@
-<?php namespace Sampleapp\Repositories;
+<?php namespace Sampleapp\Repositories\User;
 
 use User;
+use Sampleapp\Repositories\BaseRepository;
 
 class EloquentUserRepository extends BaseRepository implements UserRepository {
 

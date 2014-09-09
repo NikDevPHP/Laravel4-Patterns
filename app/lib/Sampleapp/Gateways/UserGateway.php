@@ -8,7 +8,7 @@
  * data and is not concerned with the validation.
  */
 
-use Sampleapp\Repositories\UserRepository;
+use Sampleapp\Repositories\User\UserRepository;
 
 class UserGateway {
 
