@@ -61,6 +61,7 @@ From the console run
 #### Step 3
 
 Add the following line in app/config/app.php to the 'providers' array
+
         'Sampleapp\ServiceProviders\UserServiceProvider'
 
 Note : All the changed files are included in this repository.
