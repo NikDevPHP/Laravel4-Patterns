@@ -22,6 +22,8 @@ http://stackoverflow.com/questions/18817615/managing-relationships-in-laravel-ad
 
 http://culttt.com/2013/07/29/creating-laravel-4-validation-services/
 
+http://culttt.com/2014/01/13/advanced-validation-service-laravel-4/
+
 ### How everthing fits together
 
                  Service\Validator                     (UserServiceProvider)
