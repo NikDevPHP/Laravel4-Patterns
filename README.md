@@ -26,11 +26,11 @@ http://culttt.com/2013/07/29/creating-laravel-4-validation-services/
 
                  Service\Validator                     (UserServiceProvider)
          (Service\Validator\UserValidator)               Service Providers
-	                  +                                      |
+                          +                                      |
                     (UserGateway)                                V
     Controller ------> Gateway -------> Repository 1 ---> Eloquent Repository ---> Model 1 ---> DB Table
     (UserController)      |          (UserRespository) (EloquentUserRepository)    (User)       (users)
-			  |
+                |         |
                           ------------> Repository 2 ---> Eloquent Repository ---> Model 2 ---> DB Table
                           |
                           ------------> Repository n ---> Eloquent Repository ---> Model n ---> DB Table
