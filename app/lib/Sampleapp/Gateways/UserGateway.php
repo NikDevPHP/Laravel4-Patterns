@@ -32,6 +32,7 @@ class UserGateway {
 		/**
 		 * NOTE : if you need to access more than one model do this here, All your business
 		 * logic and validation is handled by this gateway.
+		 */
 
 		/* Return validation errors to the controller */
 		return array('status' => 'error', 'message' => $userValidator->getErrors());
