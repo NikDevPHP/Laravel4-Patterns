@@ -16,11 +16,7 @@ class UserController extends BaseController {
 		$this->userGateway = $userGateway;
 	}
 
-	/**
-	  * Create a new resource in storage.
-	  *
-	  * @return Response
-	  */
+	/* Gateway - Repository - Validator Service demo method */
 	public function postCreate()
 	{
 		/* Dummy data, use Input::all() instead in your application */
@@ -44,6 +40,27 @@ class UserController extends BaseController {
 			'status' => 'error',
 			'message' => $data['message'],
 		));
+	}
+
+	/* Presenter demo method */
+	public function getIndex()
+	{
+		/**
+		 * NOTE : This is the demo for the Presenter, hence for simplicity
+		 * I am bypassing the UserGateway and directly accessing the
+		 * model directly. You need to use the Gateway to get the users.
+		 * For more info on Presenter see :
+		 *
+		 * https://github.com/ShawnMcCool/laravel-auto-presenter/tree/2.2
+		 *
+		 * app/lib/Sampleapp/Presenters/UserPresenter.php
+		 * app/models/User.php
+		 *
+		 * Also, the laravel-auto-presenter that I am using is version 2.2,
+		 * version 3.x is not compatible with this setup.
+		 */
+		$users = User::all();
+		return View::make('users.index', compact('users'));
 	}
 
 }

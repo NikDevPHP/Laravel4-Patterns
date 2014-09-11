@@ -4,7 +4,9 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"raveren/kint": "dev-master",
+		"mccool/laravel-auto-presenter": "~2.2"
 	},
 	"autoload": {
 		"classmap": [
