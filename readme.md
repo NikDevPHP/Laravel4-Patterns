@@ -2,7 +2,6 @@
 
 Basic template for laravel 4 applications using Gateways, Repositories, Service Providers and Validaion Service.
 
-
 ### Includes the following patterns
 
 * Gateways
@@ -62,10 +61,10 @@ http://culttt.com/2013/07/08/creating-flexible-controllers-in-laravel-4-using-re
 Edit the composer.json file inside the laravel 4 root directory and
 add the following lines to "require" and "classmap" section :
 
-        "require": {
-            ...
-            "mccool/laravel-auto-presenter": "~2.2"
-        },
+	"require": {
+		...
+		"mccool/laravel-auto-presenter": "~2.2"
+	},
 
 	"autoload": {
 		"classmap": [
@@ -95,13 +94,13 @@ From the console run
 
 Create a database with following structure :
 
-        CREATE TABLE IF NOT EXISTS users (
-                `id` int(11) NOT NULL AUTO_INCREMENT,
-                `username` varchar(255) NOT NULL,
-                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-                `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-                PRIMARY KEY (`id`)
-        ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+	CREATE TABLE IF NOT EXISTS users (
+		`id` int(11) NOT NULL AUTO_INCREMENT,
+		`username` varchar(255) NOT NULL,
+		`updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+		`created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+		PRIMARY KEY (`id`)
+	) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 Add the database configuration to the app/config/database.php
 
@@ -123,7 +122,7 @@ This request should succeed.
 
 3. Make a GET request to the URL http://public/api/user/index
 
-        $curl -X GET http://<your-laravel-url>/public/api/user/index
+	$curl -X GET http://<your-laravel-url>/public/api/user/index
 
 This request should succeed.
 
