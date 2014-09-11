@@ -2,6 +2,8 @@
 
 Basic template for laravel 4 applications using Gateways, Repositories, Service Providers and Validaion Service.
 
+Full version of this template is now avaiable : https://github.com/octabrain/Laravel4-Patterns-Full
+
 ### Includes the following patterns
 
 * Gateways
@@ -9,8 +11,6 @@ Basic template for laravel 4 applications using Gateways, Repositories, Service 
 * Service Providers
 * Validation Service
 * Presenter
-
-Full version of this template is now avaiable : https://github.com/octabrain/Laravel4-Patterns-Full
 
 Inspired by :
 
