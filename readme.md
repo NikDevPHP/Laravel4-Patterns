@@ -9,6 +9,7 @@ Basic template for laravel 4 applications using Gateways, Repositories, Service 
 * Repositories
 * Service Providers
 * Validation Service
+* Presenter
 
 Inspired by :
 
