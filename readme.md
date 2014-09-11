@@ -26,6 +26,11 @@ http://culttt.com/2014/01/20/extending-laravel-4-validator/
 
 http://culttt.com/2013/07/08/creating-flexible-controllers-in-laravel-4-using-repositories/
 
+### Laravel Packages used
+
+1. ShawnMcCool - laravel-auto-presenter - version 2.2 - MIT License
+
+https://github.com/ShawnMcCool/laravel-auto-presenter/tree/2.2
 
 ### How everthing fits together
 
@@ -74,7 +79,7 @@ Add the following lines in app/config/app.php to the 'providers' array
 
 	'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
 	'Sampleapp\ServiceProviders\ValidationServiceProvider',
-        'Sampleapp\ServiceProviders\UserServiceProvider'
+	'Sampleapp\ServiceProviders\UserServiceProvider'
 
 Note : All the changed files are included in this repository.
 
