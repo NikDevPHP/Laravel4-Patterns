@@ -26,8 +26,16 @@ http://culttt.com/2014/01/13/advanced-validation-service-laravel-4/
 
 ### How everthing fits together
 
-                 Service\Validator                     (UserServiceProvider)
-         (Service\Validator\UserValidator)               Service Providers
+                  (CustomValidator)
+               Custom Validation Rules
+                          |
+                          V
+             (ValidationServiceProvider)
+                  Service Providers
+                          |
+                          V
+         (Service\Validator\UserValidator)             (UserServiceProvider)
+                Service\Validator                        Service Providers
                           +                                      |
                     (UserGateway)                                V
     Controller ------> Gateway -------> Repository 1 ---> Eloquent Repository ---> Model 1 ---> DB Table
@@ -65,6 +73,20 @@ Note : All the changed files are included in this repository.
 From the console run
 
 	$composer dump-autoload -o
+
+#### Test
+
+Make a POST request to the URL http://<your-laravel-url>/public/api/user/create
+
+	$curl -X POST http://<your-laravel-url>/public/api/user/create
+
+This request should fail with hex validation error.
+
+Remove the 'hex' rule from app/lib/Sampleapp/Services/Validators/UserValidator.php
+
+	$curl -X POST http://<your-laravel-url>/public/api/user/create
+
+This request should succeed.
 
 ### License
 

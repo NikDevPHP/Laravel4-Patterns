@@ -19,9 +19,15 @@ class UserGateway {
 	}
 
 	public function createUser($input) {
-		/* Validation */
-		$userValidator = new \Sampleapp\Services\Validators\UserValidator;
-		if ($userValidator->passes($input)) {
+
+		/**
+		 * User Validation is done here in the gateway
+		 *
+		 * For rules see app/lib/Sampleapp/Services/Validators/UserValidator.php
+		 */
+		$userValidator = new \Sampleapp\Services\Validators\UserValidator($input);
+
+		if ($userValidator->passes()) {
 			if ($this->userRepository->create($input)) {
 				return array('status' => 'success');
 			} else {

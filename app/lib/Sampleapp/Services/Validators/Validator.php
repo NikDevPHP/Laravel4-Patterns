@@ -1,5 +1,7 @@
 <?php namespace Sampleapp\Services\Validators;
 
+/* Reference : http://culttt.com/2013/07/29/creating-laravel-4-validation-services/ */
+
 abstract class Validator {
 
         protected $input;

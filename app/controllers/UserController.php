@@ -23,7 +23,15 @@ class UserController extends BaseController {
 	  */
 	public function postCreate()
 	{
-		$data = $this->userGateway->createUser(Input::all());
+		/* Dummy data, use Input::all() instead in your application */
+		$input = array(
+			'username' => 'dummy'
+		);
+
+		/* Use the User Gateway to create the user */
+		$data = $this->userGateway->createUser($input);
+
+		/************* JSON Response ************/
 
 		if ($data['status'] == 'success') {
 			return Response::json(array(
