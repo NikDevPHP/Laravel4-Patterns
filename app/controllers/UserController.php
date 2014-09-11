@@ -48,7 +48,9 @@ class UserController extends BaseController {
 		/**
 		 * NOTE : This is the demo for the Presenter, hence for simplicity
 		 * I am bypassing the UserGateway and directly accessing the
-		 * model directly. You need to use the Gateway to get the users.
+		 * model. You need to use the Gateway to get the users. Check
+		 * the above postCreate() method on how to use a Gateway.
+		 *
 		 * For more info on Presenter see :
 		 *
 		 * https://github.com/ShawnMcCool/laravel-auto-presenter/tree/2.2
