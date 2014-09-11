@@ -110,19 +110,19 @@ Add some dummy data also.
 
 #### Test
 
-1. Make a POST request to the URL http://<your-laravel-url>/public/api/user/create
+Make a POST request to the URL http://<your-laravel-url>/public/api/user/create
 
 	$curl -X POST http://<your-laravel-url>/public/api/user/create
 
 This request should fail with hex validation error.
 
-2. Remove the 'hex' rule from app/lib/Sampleapp/Services/Validators/UserValidator.php
+Remove the 'hex' rule from app/lib/Sampleapp/Services/Validators/UserValidator.php
 
 	$curl -X POST http://<your-laravel-url>/public/api/user/create
 
 This request should succeed.
 
-3. Make a GET request to the URL http://public/api/user/index
+Make a GET request to the URL http://public/api/user/index
 
 	$curl -X GET http://<your-laravel-url>/public/api/user/index
 
