@@ -122,6 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Sampleapp\ServiceProviders\ValidationServiceProvider',
+		'Robbo\Presenter\PresenterServiceProvider',
 		'Sampleapp\ServiceProviders\UserServiceProvider'
 	),
 

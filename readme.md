@@ -1,50 +1,9 @@
 ## Laravel - Patterns demo application
 
-Basic template for laravel 4 applications using Gateways, Repositories, Service Providers and Validaion Service.
+This is the presenter demo branch which integrates https://github.com/robclancy/presenter presenter
 
-
-### Includes the following patterns
-
-* Gateways
-* Repositories
-* Service Providers
-* Validation Service
-
-Inspired by :
-
-https://github.com/seeARMS/laravel-repository-gateway
-
-Reference :
-
-http://stackoverflow.com/questions/18817615/managing-relationships-in-laravel-adhering-to-the-repository-pattern
-
-http://stackoverflow.com/questions/18817615/managing-relationships-in-laravel-adhering-to-the-repository-pattern
-
-http://culttt.com/2013/07/29/creating-laravel-4-validation-services/
-
-http://culttt.com/2014/01/13/advanced-validation-service-laravel-4/
-
-### How everthing fits together
-
-                  (CustomValidator)
-               Custom Validation Rules
-                          |
-                          V
-             (ValidationServiceProvider)
-                  Service Providers
-                          |
-                          V
-         (Service\Validator\UserValidator)             (UserServiceProvider)
-                Service\Validator                        Service Providers
-                          +                                      |
-                    (UserGateway)                                V
-    Controller ------> Gateway -------> Repository 1 ---> Eloquent Repository ---> Model 1 ---> DB Table
-    (UserController)      |          (UserRespository) (EloquentUserRepository)    (User)       (users)
-                          |
-                          ------------> Repository 2 ---> Eloquent Repository ---> Model 2 ---> DB Table
-                          |
-                          ------------> Repository n ---> Eloquent Repository ---> Model n ---> DB Table
-
+Check the master branch for more details :
+https://github.com/octabrain/presenter
 
 ### How to use it
 
@@ -53,18 +12,16 @@ http://culttt.com/2014/01/13/advanced-validation-service-laravel-4/
 Edit the composer.json file inside the laravel 4 root directory and
 add the following line to "classmap" section :
 
-	"autoload": {
-		"classmap": [
-			......
-			"app/lib"
-		],
+	"require": {
+		...
+		"robclancy/presenter": "1.3.*"
 	},
 
 #### Step 2
 
 Add the following line in app/config/app.php to the 'providers' array
 
-        'Sampleapp\ServiceProviders\UserServiceProvider'
+	'Robbo\Presenter\PresenterServiceProvider'
 
 Note : All the changed files are included in this repository.
 
@@ -72,19 +29,17 @@ Note : All the changed files are included in this repository.
 
 From the console run
 
+	$composer update
 	$composer dump-autoload -o
 
 #### Test
 
-Make a POST request to the URL http://<your-laravel-url>/public/api/user/create
+Setup a database with 'users' table and 'id', 'username' columns and
+insert some random data. Setup laravel to connect to the database.
 
-	$curl -X POST http://<your-laravel-url>/public/api/user/create
+Make a GET request to the URL http://<your-laravel-url>/public/api/user/index
 
-This request should fail with hex validation error.
-
-Remove the 'hex' rule from app/lib/Sampleapp/Services/Validators/UserValidator.php
-
-	$curl -X POST http://<your-laravel-url>/public/api/user/create
+	$curl -X GET http://<your-laravel-url>/public/api/user/index
 
 This request should succeed.
 

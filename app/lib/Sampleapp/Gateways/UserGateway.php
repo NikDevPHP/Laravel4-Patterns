@@ -18,6 +18,10 @@ class UserGateway {
 		$this->userRepository = $userRepository;
 	}
 
+	public function getAll() {
+		return $this->userRepository->getAll();
+	}
+
 	public function createUser($input) {
 
 		/**

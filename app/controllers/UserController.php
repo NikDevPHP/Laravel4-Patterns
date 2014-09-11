@@ -8,12 +8,34 @@
  */
 
 use Sampleapp\Gateways\UserGateway;
+use \Sampleapp\Presenters\UserPresenter;
 
 class UserController extends BaseController {
+
+	protected $layout = 'masterlayout';
 
 	public function __construct(UserGateway $userGateway)
 	{
 		$this->userGateway = $userGateway;
+	}
+
+	public function getIndex()
+	{
+		/**
+		 * Presenter will add $user->userinfo to each user object
+		 * https://github.com/robclancy/presenter
+		 *
+		 * Check the following files :
+		 *
+		 * app/models/User.php
+		 * app/lib/Sampleapp/Presenters/UserPresenter.php
+		 * app/views/users.blade.php
+		 *
+		 * Note : Using the User Gateway to get data rather than directly
+		 * calling Eloquent models
+		 */
+		$users = $this->userGateway->getAll();
+		return View::make('users', compact('users'));
 	}
 
 	/**
