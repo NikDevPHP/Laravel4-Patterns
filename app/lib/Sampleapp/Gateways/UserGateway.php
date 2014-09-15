@@ -9,13 +9,17 @@
  */
 
 use Sampleapp\Repositories\User\UserRepository;
+use Sampleapp\Services\Validators\UserValidator;
 
 class UserGateway {
 
 	protected $userRepository;
 
-	public function __construct(UserRepository $userRepository) {
+	protected $userValidator;
+
+	public function __construct(UserRepository $userRepository, UserValidator $userValidator) {
 		$this->userRepository = $userRepository;
+		$this->userValidator = $userValidator;
 	}
 
 	public function createUser($input) {
@@ -25,9 +29,9 @@ class UserGateway {
 		 *
 		 * For rules see app/lib/Sampleapp/Services/Validators/UserValidator.php
 		 */
-		$userValidator = new \Sampleapp\Services\Validators\UserValidator($input);
+		$this->userValidator->with($input);
 
-		if ($userValidator->passes()) {
+		if ($this->userValidator->passes()) {
 			if ($this->userRepository->create($input)) {
 				return array('status' => 'success');
 			} else {
@@ -41,7 +45,7 @@ class UserGateway {
 		 */
 
 		/* Return validation errors to the controller */
-		return array('status' => 'error', 'message' => $userValidator->getErrors());
+		return array('status' => 'error', 'message' => $this->userValidator->getErrors());
 	}
 
 }

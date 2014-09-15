@@ -8,9 +8,11 @@ abstract class Validator {
 
         protected $errors;
 
-        public function __construct($input = NULL)
+        public function with(array $input)
         {
-                $this->input = $input ?: \Input::all();
+                $this->input = $input;
+
+                return $this;
         }
 
         public function passes()
