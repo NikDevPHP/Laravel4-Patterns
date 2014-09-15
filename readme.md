@@ -6,7 +6,7 @@ Full version of this template is now avaiable : https://github.com/octabrain/Lar
 
 ### Includes the following patterns
 
-* Gateways
+* Gateways / Entities
 * Repositories
 * Service Providers
 * Validation Service
